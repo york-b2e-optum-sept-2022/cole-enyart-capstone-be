@@ -1,0 +1,28 @@
+###
+GET http://localhost:8080/api/process
+
+###
+POST http://localhost:8080/api/process
+Content-Type: application/json
+
+{
+  "title": "one",
+  "stage": [{
+    "prompt": "what is what?",
+    "type": "boolean"
+  }]
+
+}
+
+###
+POST http://localhost:8080/api/process
+Content-Type: application/json
+
+{
+  "title": "two",
+  "stage": [{
+    "prompt": "who is who?",
+    "type": "text"
+  }]
+
+}
