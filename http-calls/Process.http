@@ -1,6 +1,8 @@
 ###
 GET http://localhost:8080/api/process
 
+}
+
 ###
 POST http://localhost:8080/api/process
 Content-Type: application/json
@@ -8,10 +10,10 @@ Content-Type: application/json
 {
   "title": "one",
   "stage": [{
-    "prompt": "what is what?",
-    "type": "boolean"
-  }]
-
+    "prompt": "which is which?",
+    "type": "choice",
+    "choice": ["a", "b", "c", "d"]
+    }]
 }
 
 ###
@@ -21,8 +23,14 @@ Content-Type: application/json
 {
   "title": "two",
   "stage": [{
+    "prompt": "where is where?",
+    "type": "boolean",
+    "choice": []
+    },
+    {
     "prompt": "who is who?",
-    "type": "text"
-  }]
-
+    "type": "text",
+    "choice": []
+    }]
 }
+
