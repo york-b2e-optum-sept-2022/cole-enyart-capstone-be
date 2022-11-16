@@ -1,6 +1,7 @@
 package net.yorksolutions.coleenyartcapstonebe.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Stage {
@@ -12,9 +13,8 @@ public class Stage {
 
     private String type;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(referencedColumnName = "id")
-//    private Process process;
+    @ElementCollection
+    private List<String> choice;
 
     public Stage() {
     }
@@ -22,10 +22,6 @@ public class Stage {
     public Long getId() {
         return id;
     }
-
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
 
     public String getPrompt() {
         return prompt;
@@ -43,11 +39,7 @@ public class Stage {
         this.type = type;
     }
 
-//    public Process getProcess() {
-//        return process;
-//    }
-//
-//    public void setProcess(Process process) {
-//        this.process = process;
-//    }
+    public List<String> getChoice() { return choice; }
+
+    public void setChoice(List<String> choice) { this.choice = choice; }
 }

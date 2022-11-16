@@ -21,10 +21,6 @@ public class Process {
         return id;
     }
 
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-
     public String getTitle() {
         return title;
     }
@@ -37,7 +33,5 @@ public class Process {
         return stage;
     }
 
-    public void setStage(List<Stage> stage) {
-        this.stage = stage;
-    }
+    public void setStage(List<Stage> stage) { this.stage = stage; }
 }
