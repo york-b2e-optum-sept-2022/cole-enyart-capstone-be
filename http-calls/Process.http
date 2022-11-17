@@ -12,7 +12,12 @@ Content-Type: application/json
   "stage": [{
     "prompt": "which is which?",
     "type": "choice",
-    "choice": ["a", "b", "c", "d"]
+    "choice": [
+      {"text": "a"},
+      {"text": "b"},
+      {"text": "c"},
+      {"text": "d"}
+    ]
     }]
 }
 

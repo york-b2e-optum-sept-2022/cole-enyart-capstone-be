@@ -13,8 +13,8 @@ public class Stage {
 
     private String type;
 
-    @ElementCollection
-    private List<String> choice;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Choice> choice;
 
     public Stage() {
     }
@@ -27,9 +27,7 @@ public class Stage {
         return prompt;
     }
 
-    public void setPrompt(String prompt) {
-        this.prompt = prompt;
-    }
+    public void setPrompt(String prompt) { this.prompt = prompt; }
 
     public String getType() {
         return type;
@@ -39,7 +37,11 @@ public class Stage {
         this.type = type;
     }
 
-    public List<String> getChoice() { return choice; }
+    public List<Choice> getChoice() {
+        return choice;
+    }
 
-    public void setChoice(List<String> choice) { this.choice = choice; }
+    public void setChoice(List<Choice> choice) {
+        this.choice = choice;
+    }
 }
