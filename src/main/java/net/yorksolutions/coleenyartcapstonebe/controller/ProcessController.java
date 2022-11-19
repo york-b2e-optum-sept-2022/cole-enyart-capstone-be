@@ -23,4 +23,11 @@ public class ProcessController {
     public Process createProcess (@RequestBody Process process) {
         return this.processService.createProcess(process);
     }
+
+    @DeleteMapping
+    public void deleteAccount(@RequestParam Long processId) {
+        this.processService.delete(processId);
+    }
+
+
 }
