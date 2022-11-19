@@ -21,4 +21,8 @@ public class ProcessService {
     public Process createProcess(Process process) {
         return this.processRepository.save(process);
     }
+
+    public void delete(Long processId) {
+        processRepository.deleteById(processId);
+    }
 }
