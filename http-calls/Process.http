@@ -4,6 +4,9 @@ GET http://localhost:8080/api/process
 }
 
 ###
+DELETE http://localhost:8080/api/process?processId=14
+
+###
 POST http://localhost:8080/api/process
 Content-Type: application/json
 
@@ -38,4 +41,31 @@ Content-Type: application/json
     "choice": []
     }]
 }
+
+###
+PUT http://localhost:8080/api/process
+Content-Type: application/json
+
+{
+  "id": 13,
+  "title": "two",
+  "stage": [
+    {
+      "prompt": "where is where?",
+      "type": "boolean",
+      "choice": []
+    },
+    {
+      "prompt": "who is who?",
+      "type": "choice",
+      "choice": [
+        {"text": "a"},
+        {"text": "b"},
+        {"text": "c"},
+        {"text": "d"}
+      ]
+    }
+  ]
+}
+
 

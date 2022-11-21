@@ -35,5 +35,10 @@ public class Process {
 
     public void setStage(List<Stage> stage) { this.stage = stage; }
 
+    public void setChildren(List<Stage> children) {
+        this.stage.clear();
+        this.stage.addAll(children);
+    }
+
 
 }
