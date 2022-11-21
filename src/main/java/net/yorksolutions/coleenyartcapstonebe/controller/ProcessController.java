@@ -1,5 +1,6 @@
 package net.yorksolutions.coleenyartcapstonebe.controller;
 
+import net.yorksolutions.coleenyartcapstonebe.dto.UpdateProcessDTO;
 import net.yorksolutions.coleenyartcapstonebe.service.ProcessService;
 import net.yorksolutions.coleenyartcapstonebe.entity.Process;
 import org.springframework.web.bind.annotation.*;
@@ -25,9 +26,12 @@ public class ProcessController {
     }
 
     @DeleteMapping
-    public void deleteAccount(@RequestParam Long processId) {
-        this.processService.delete(processId);
+    public void deleteProcess(@RequestParam Long processId) {
+        this.processService.deleteProcess(processId);
     }
+
+    @PutMapping
+    public Process updateProcess(@RequestBody UpdateProcessDTO process) { return this.processService.updateProcess(process); }
 
 
 }

@@ -1,9 +1,14 @@
 package net.yorksolutions.coleenyartcapstonebe.service;
 
+import net.yorksolutions.coleenyartcapstonebe.dto.UpdateProcessDTO;
 import net.yorksolutions.coleenyartcapstonebe.repository.ProcessRepository;
 import net.yorksolutions.coleenyartcapstonebe.entity.Process;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.Optional;
 
 @Service
 public class ProcessService {
@@ -22,7 +27,17 @@ public class ProcessService {
         return this.processRepository.save(process);
     }
 
-    public void delete(Long processId) {
-        processRepository.deleteById(processId);
+    public void deleteProcess(Long processId) { processRepository.deleteById(processId); }
+
+    public Process updateProcess(UpdateProcessDTO process) {
+        Optional<Process> processOpt = this.processRepository.findById(process.id);
+        if (processOpt.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        Process currentProcess = processOpt.get();
+        currentProcess.setTitle(process.title);
+        currentProcess.setChildren(process.stage);
+
+        return processRepository.save(currentProcess);
     }
 }
