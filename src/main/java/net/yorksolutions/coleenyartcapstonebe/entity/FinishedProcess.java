@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Process {
+public class FinishedProcess {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -12,13 +12,17 @@ public class Process {
     private String title;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Stage> stages;
+    private List<FinishedStages> finishedStages;
 
-    public Process() {
+    public FinishedProcess() {
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -29,16 +33,12 @@ public class Process {
         this.title = title;
     }
 
-    public List<Stage> getStages() {
-        return stages;
+
+    public List<FinishedStages> getFinishedStages() {
+        return finishedStages;
     }
 
-    public void setStages(List<Stage> stage) { this.stages = stage; }
-
-    public void setChildren(List<Stage> children) {
-        this.stages.clear();
-        this.stages.addAll(children);
+    public void setFinishedStages(List<FinishedStages> finishedStages) {
+        this.finishedStages = finishedStages;
     }
-
-
 }

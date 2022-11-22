@@ -1,8 +1,6 @@
 ###
 GET http://localhost:8080/api/process
 
-}
-
 ###
 DELETE http://localhost:8080/api/process?processId=14
 
@@ -12,10 +10,10 @@ Content-Type: application/json
 
 {
   "title": "one",
-  "stage": [{
+  "stages": [{
     "prompt": "which is which?",
     "type": "choice",
-    "choice": [
+    "choices": [
       {"text": "a"},
       {"text": "b"},
       {"text": "c"},
@@ -30,15 +28,15 @@ Content-Type: application/json
 
 {
   "title": "two",
-  "stage": [{
+  "stages": [{
     "prompt": "where is where?",
     "type": "boolean",
-    "choice": []
+    "choices": []
     },
     {
     "prompt": "who is who?",
     "type": "text",
-    "choice": []
+    "choices": []
     }]
 }
 
