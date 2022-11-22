@@ -10,5 +10,5 @@ public class UpdateProcessDTO {
 
     public String title;
 
-    public List<Stage> stage;
+    public List<Stage> stages;
 }

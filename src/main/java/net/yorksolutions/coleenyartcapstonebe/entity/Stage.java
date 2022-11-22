@@ -14,7 +14,7 @@ public class Stage {
     private String type;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Choice> choice;
+    private List<Choice> choices;
 
     public Stage() {
     }
@@ -37,11 +37,11 @@ public class Stage {
         this.type = type;
     }
 
-    public List<Choice> getChoice() {
-        return choice;
+    public List<Choice> getChoices() {
+        return choices;
     }
 
-    public void setChoice(List<Choice> choice) {
-        this.choice = choice;
+    public void setChoices(List<Choice> choice) {
+        this.choices = choice;
     }
 }

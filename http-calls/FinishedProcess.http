@@ -1,0 +1,16 @@
+###
+GET http://localhost:8080/api/process/finished
+
+###
+POST http://localhost:8080/api/process/finished
+Content-Type: application/json
+
+{
+  "title": "one",
+  "finishedStages": [
+    {
+      "prompt": "which is which?",
+      "answer": "true"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 package net.yorksolutions.coleenyartcapstonebe.controller;
 
 import net.yorksolutions.coleenyartcapstonebe.dto.UpdateProcessDTO;
+import net.yorksolutions.coleenyartcapstonebe.entity.FinishedProcess;
 import net.yorksolutions.coleenyartcapstonebe.service.ProcessService;
 import net.yorksolutions.coleenyartcapstonebe.entity.Process;
 import org.springframework.web.bind.annotation.*;
@@ -33,5 +34,14 @@ public class ProcessController {
     @PutMapping
     public Process updateProcess(@RequestBody UpdateProcessDTO process) { return this.processService.updateProcess(process); }
 
+    @GetMapping("/finished")
+    public Iterable<FinishedProcess> getFinishedProcessList() {
+        return this.processService.getAllFinishedProcesses();
+    }
+
+    @PostMapping("/finished")
+    public FinishedProcess saveFinishedProcess (@RequestBody FinishedProcess process) {
+        return this.processService.saveFinishedProcess(process);
+    }
 
 }
