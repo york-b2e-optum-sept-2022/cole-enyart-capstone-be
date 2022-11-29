@@ -10,7 +10,25 @@ Content-Type: application/json
   "finishedStages": [
     {
       "prompt": "which is which?",
-      "answer": "true"
+      "answer": "",
+      "finishedChoices": [
+        {
+          "text": "a",
+          "value": "true"
+        },
+        {
+          "text": "b",
+          "value": "false"
+        },
+        {
+          "text": "c",
+          "value": "false"
+        },
+        {
+          "text": "d",
+          "value": "true"
+        }
+      ]
     }
   ]
 }
