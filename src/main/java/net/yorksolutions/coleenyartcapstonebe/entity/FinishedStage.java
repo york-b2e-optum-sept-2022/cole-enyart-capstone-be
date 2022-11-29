@@ -1,9 +1,10 @@
 package net.yorksolutions.coleenyartcapstonebe.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-public class FinishedStages {
+public class FinishedStage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -12,7 +13,10 @@ public class FinishedStages {
 
     private String answer;
 
-    public FinishedStages() {
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<FinishedChoice> finishedChoices;
+
+    public FinishedStage() {
     }
 
     public Long getId() {
@@ -33,5 +37,13 @@ public class FinishedStages {
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public List<FinishedChoice> getFinishedChoices() {
+        return finishedChoices;
+    }
+
+    public void setFinishedChoices(List<FinishedChoice> finishedChoices) {
+        this.finishedChoices = finishedChoices;
     }
 }

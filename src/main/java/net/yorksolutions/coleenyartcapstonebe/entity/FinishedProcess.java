@@ -12,7 +12,7 @@ public class FinishedProcess {
     private String title;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<FinishedStages> finishedStages;
+    private List<FinishedStage> finishedStages;
 
     public FinishedProcess() {
     }
@@ -34,11 +34,11 @@ public class FinishedProcess {
     }
 
 
-    public List<FinishedStages> getFinishedStages() {
+    public List<FinishedStage> getFinishedStages() {
         return finishedStages;
     }
 
-    public void setFinishedStages(List<FinishedStages> finishedStages) {
+    public void setFinishedStages(List<FinishedStage> finishedStages) {
         this.finishedStages = finishedStages;
     }
 }
